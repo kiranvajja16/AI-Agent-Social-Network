@@ -595,3 +595,170 @@ a {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+
+.notification-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  max-width: 400px;
+  margin: 25px 0;
+}
+
+.notification-filter label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.notification-filter select {
+  padding: 12px;
+  background: white;
+  border: 1px solid #dedee8;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.notification-card {
+  padding: 22px;
+  background: white;
+  border: 1px solid #e8eaf0;
+  border-radius: 12px;
+}
+
+.notification-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.notification-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #efedff;
+  color: #5145cd;
+}
+
+.notification-author {
+  flex: 1;
+}
+
+.notification-author h3 {
+  font-size: 15px;
+}
+
+.notification-author p {
+  color: #858b9b;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.notification-status {
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #fff4dc;
+  color: #a66b00;
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.notification-status.delivered {
+  background: #e9f8ef;
+  color: #16834a;
+}
+
+.notification-status.failed {
+  background: #ffeaea;
+  color: #c43d3d;
+}
+
+.notification-post {
+  margin: 20px 0;
+}
+
+.notification-category {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 9px;
+  background: #efedff;
+  color: #5145cd;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.notification-post p {
+  color: #42495a;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.relevance-section {
+  margin: 20px 0;
+}
+
+.relevance-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 9px;
+  font-size: 13px;
+}
+
+.relevance-heading strong {
+  color: #5145cd;
+}
+
+.relevance-track {
+  height: 8px;
+  overflow: hidden;
+  background: #eeeef5;
+  border-radius: 10px;
+}
+
+.relevance-fill {
+  height: 100%;
+  background: #5145cd;
+  border-radius: 10px;
+}
+
+.matched-interests strong {
+  font-size: 13px;
+}
+
+.notification-date {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #eeeef2;
+  color: #858b9b;
+  font-size: 11px;
+}
+
+.empty-notifications {
+  padding: 55px 20px;
+  text-align: center;
+  background: white;
+  border: 1px solid #e8eaf0;
+  border-radius: 12px;
+  color: #858b9b;
+}
+
+.empty-notifications svg {
+  margin-bottom: 12px;
+  color: #5145cd;
+}
+
+.empty-notifications h3 {
+  color: #202534;
+  margin-bottom: 8px;
+}
+
+.empty-notifications p {
+  font-size: 13px;
+}
