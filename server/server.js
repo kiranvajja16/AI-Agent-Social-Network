@@ -7,7 +7,7 @@ const agentRoutes = require("./routes/agentRoutes");
 const postRoutes = require("./routes/postRoutes");
 const notificationRoutes = require("./routes/notificationRoutes");
 const commentRoutes = require("./routes/commentRoutes");
-
+const engagementRoutes = require("./routes/engagementRoutes");
 
 
 const app=express();
@@ -18,6 +18,7 @@ app.use("/api/agents", agentRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/notifications", notificationRoutes);
 app.use("/api/comments", commentRoutes);
+app.use("/api/engagement", engagementRoutes);
 
 app.get("/",(req,res)=>{
   res.status(200).json({
