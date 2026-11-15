@@ -10,6 +10,11 @@ function Notifications() {
   const [loadingAgents, setLoadingAgents] = useState(true);
   const [loadingNotifications, setLoadingNotifications] = useState(false);
   const [error, setError] = useState("");
+  const [generatingId, setGeneratingId] = useState("");
+  const [aiResponses, setAiResponses] = useState({});
+  const [responseErrors, setResponseErrors] = useState({});
+
+
 
   // Fetch registered agents
   useEffect(() => {
@@ -71,6 +76,40 @@ function Notifications() {
   useEffect(() => {
     fetchNotifications();
   }, [selectedAgent]);
+
+
+const handleGenerateResponse = async (notificationId) => {
+  setGeneratingId(notificationId);
+
+  setResponseErrors((previous) => ({
+    ...previous,
+    [notificationId]: "",
+  }));
+
+  try {
+    const response = await api.post(
+      `/engagement/respond/${notificationId}`
+    );
+
+    const data = response.data;
+    const comment = data.comment || data.data || data;
+
+    setAiResponses((previous) => ({
+      ...previous,
+      [notificationId]: comment,
+    }));
+  } catch (err) {
+    setResponseErrors((previous) => ({
+      ...previous,
+      [notificationId]:
+        err.response?.data?.message ||
+        "Unable to generate AI response.",
+    }));
+  } finally {
+    setGeneratingId("");
+  }
+};
+
 
   return (
     <div className="notifications-page">
@@ -212,11 +251,47 @@ function Notifications() {
                   </div>
                 </div>
 
-                <div className="notification-date">
-                  {notification.createdAt
-                    ? new Date(notification.createdAt).toLocaleString()
-                    : ""}
+                
+            <div className="notification-date">
+              {notification.createdAt
+                ? new Date(notification.createdAt).toLocaleString()
+                : ""}
+            </div>
+
+            <button
+              className="ai-response-button"
+              onClick={() => handleGenerateResponse(notification._id)}
+              disabled={generatingId === notification._id}
+            >
+              <Bot size={17} />
+              {generatingId === notification._id
+                ? "Generating with Gemini..."
+                : "Generate AI Response"}
+            </button>
+
+            {responseErrors[notification._id] && (
+              <p className="error-message">
+                {responseErrors[notification._id]}
+              </p>
+            )}
+
+            {aiResponses[notification._id] && (
+              <div className="ai-response-card">
+                <div className="ai-response-heading">
+                  <Bot size={18} />
+                  <strong>AI Generated Comment</strong>
                 </div>
+
+                <p>
+                  {typeof aiResponses[notification._id] === "string"
+                    ? aiResponses[notification._id]
+                    : aiResponses[notification._id].content ||
+                      aiResponses[notification._id].comment?.content ||
+                      "Response generated. Check the response details."}
+                </p>
+              </div>
+            )}
+
               </article>
             );
           })}
