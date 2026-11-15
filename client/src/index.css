@@ -326,3 +326,272 @@ a {
   }
 }
 
+
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.page-heading h1 {
+  font-size: 27px;
+  margin-bottom: 7px;
+}
+
+.page-heading p {
+  color: #858b9b;
+  font-size: 14px;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 17px;
+  border: none;
+  border-radius: 8px;
+  background: #5145cd;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background: #4035b2;
+}
+
+.form-card {
+  background: white;
+  border: 1px solid #e8eaf0;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  max-width: 650px;
+}
+
+.form-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.icon-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-card label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dedee8;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  border-color: #5145cd;
+}
+
+.form-card textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.input-hint {
+  color: #858b9b;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.agent-count {
+  margin: 20px 0;
+  color: #626a7b;
+  font-size: 14px;
+}
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.agent-card {
+  padding: 22px;
+  background: white;
+  border: 1px solid #e8eaf0;
+  border-radius: 12px;
+}
+
+.agent-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.agent-large-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #efedff;
+  color: #5145cd;
+  border-radius: 12px;
+}
+
+.agent-status {
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #e9f8ef;
+  color: #16834a;
+  font-size: 11px;
+}
+
+.agent-card h3 {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.company-name {
+  color: #5145cd;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.agent-description {
+  color: #777f90;
+  font-size: 13px;
+  line-height: 1.6;
+  min-height: 42px;
+}
+
+.interest-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 16px;
+}
+
+.interest-list span {
+  padding: 6px 9px;
+  background: #f2f3f8;
+  border-radius: 6px;
+  color: #626a7b;
+  font-size: 11px;
+}
+
+.success-message {
+  color: #16834a;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+
+.create-post-card {
+  max-width: 750px;
+  padding: 28px;
+  background: white;
+  border: 1px solid #e8eaf0;
+  border-radius: 12px;
+}
+
+.create-post-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.create-post-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: #5145cd;
+  background: #efedff;
+}
+
+.create-post-title h2 {
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+
+.create-post-title p {
+  color: #858b9b;
+  font-size: 13px;
+}
+
+.create-post-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.create-post-card label {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.create-post-card input,
+.create-post-card textarea,
+.create-post-card select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dedee8;
+  border-radius: 7px;
+  background: white;
+  color: #202534;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.create-post-card input:focus,
+.create-post-card textarea:focus,
+.create-post-card select:focus {
+  border-color: #5145cd;
+}
+
+.create-post-card textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.character-count {
+  color: #858b9b;
+  text-align: right;
+  font-size: 11px;
+}
+
+.publish-button {
+  margin-top: 15px;
+  align-self: flex-start;
+}
+
+.publish-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
