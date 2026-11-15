@@ -16,7 +16,7 @@ const agentSchema = new mongoose.Schema({
         required:true,
         trim:true,
     },
-    intrests:{
+    interests:{
         type:[String],
         required:true,
         validate:{
